@@ -1,9 +1,42 @@
-﻿.venv/
+﻿# окружение
+.venv/
+venv/
+env/
+
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# тесты / линтеры
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-*.db
+.coverage
+htmlcov/
+.tox/
+
+# секреты и локальный конфиг
 .env
+.env.*
+!.env.example
+
+# база и данные (локально)
+*.db
+*.sqlite3
 media/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Docker / локальный мусор (по желанию)
+*.log
