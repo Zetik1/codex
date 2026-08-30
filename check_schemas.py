@@ -1,4 +1,4 @@
-from app.chemas.article_type import validate_fields_schema
+from app.schemas.article_type import validate_fields_schema
 
 GOOD = [
     {"key": "level", "label": "Уровень", "type": "select", "options": ["низшая", "высшая"]},
@@ -18,6 +18,7 @@ BAD = {
     "ключ в 41 символ": [{"key": "a" * 41, "label": "Длинный", "type": "number"}],
     "51 поле": [{"key": f"f{i}", "label": "Поле", "type": "number"} for i in range(51)],
     "не список": {"key": "power", "label": "Сила", "type": "number"},
+    "пустой label": [{"key": "power", "label": "", "type": "number"}],
 }
 
 print("--- хорошая схема ---")

@@ -11,7 +11,7 @@ class FieldDef(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     key: str = Field(pattern=KEY_PATTERN, max_length=40)
-    label: str = Field(min_lenght=1, max_length=100)
+    label: str = Field(min_length=1, max_length=100)
     type: Literal["string", "number", "bool", "date", "select"]
     options: list[str] | None = None
 
