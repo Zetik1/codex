@@ -6,7 +6,6 @@ def main() -> None:
     print(f"Python {sys.version}")
 
 if __name__ == "__main__":
-    main(
-        init_db(),
-        print("ok")
-    )
+    init_db()
+    main()
+    print("ok")
