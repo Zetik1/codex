@@ -19,6 +19,6 @@ class ArticleType(Base):
     fields_schema: Mapped[list[dict]] = mapped_column(JSON, default=list)
 
     @validates("fields_schema")
-    def _check_fields_schema(self, key:str, value: object) -> list[dict]:
+    def _check_fields_schema(self, key: str, value: object) -> list[dict]:
         fields = validate_fields_schema(value)
         return [field.model_dump(exclude_none=True) for field in fields]
