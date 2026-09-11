@@ -5,7 +5,7 @@ from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 engine = create_engine(
     "sqlite:///codex.db",
-    echo=True,
+    echo=False,
     connect_args={"check_same_thread": False}
 )
 
@@ -16,5 +16,7 @@ class Base(DeclarativeBase):
 
 SessionLocal = sessionmaker(bind=engine) 
 
-def init_db():
+def init_db() -> None:
+    from app import models  # noqa: F401 - регистрация моделей в Base.metadata
+
     Base.metadata.create_all(bind=engine)
